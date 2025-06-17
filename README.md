@@ -1,6 +1,4 @@
-<p style="text-align:center; font-size:72px; font-weight:bold;">
-HUSK
-</p>
+![HUSK](HUSK.png)
 
 A Hierarchically Structured Urban Knowledge Graph Dataset for Multi-Level Spatial Tasks.
 
@@ -27,14 +25,40 @@ The datasets used in this work are derived from two open-source datasets in the 
 
 Below are detailed explanations of how to preprocess and use these data.
 
-#### 3.1 UrbanKG Data
+#### 3.1 HUSK Data
+
+##### 3.1.1 Data Overview
+
+The following table provides a brief description of the dataset:
 
 | Dataset | POI   | Road   | Junction | FZ   | Area | Borough |
 | ------- | ----- | ------ | -------- | ---- | ---- | ------- |
 | NYC     | 62450 | 110919 | 62627    | 1271 | 260  | 5       |
 | CHI     | 31573 | 71578  | 37342    | 190  | 77   | 6       |
 
-##### Guidance on data usage and processing
+For each city, we construct its corresponding HUSK, which consists of triples formed by entities and relations. As shown in the table above, entities represent various urban features at different hierarchical levels, while relations serve as edges that connect pairs of entities. The main types of relations include the following:
+
+| relation | description                                            | example                          | number                    |
+| -------- | ------------------------------------------------------ | -------------------------------- | ------------------------- |
+| PLA      | Indicates that a POI belongs to an Area                | POI/245 PLA Area/224             | NYC: 62450 / CHI: 31573   |
+| RLA      | Indicates that a Road is located in an Area            | Road/191752 RLA Area/61          | NYC: 110919 / CHI: 71578  |
+| JLA      | Indicates that a Junction is in an Area                | Junction/1293 JLA Area/232       | NYC: 62437 / CHI: 37086   |
+| PBB      | Indicates that a POI is in a Borough                   | POI/669727 PBB Borough/2         | NYC: 62450 / CHI: 31573   |
+| RBB      | Indicates that a Road is in a Borough                  | Road/191751 RBB Borough/4        | NYC: 110919 / CHI: 71578  |
+| JBB      | Indicates that a Junction is in a Borough              | Junction/954 JBB Borough/1       | NYC: 62437 / CHI: 37086   |
+| ALB      | Indicates that an Area belongs to a Borough            | Area/5 ALB Borough/5             | NYC: 284 / CHI: 123       |
+| JBR      | Indicates that a Junction connects to a Road           | Junction/79296 JBR Road/191753   | NYC: 221838 / CHI: 143156 |
+| BNB      | Indicates a hierarchical relation between Boroughs     | Borough/4 BNB Borough/2          | NYC: 6 / CHI: 16          |
+| ANA      | Indicates that two Areas are adjacent                  | Area/4 ANA Area/148              | NYC: 694 / CHI: 394       |
+| PHPC     | Indicates that a POI belongs to a POI category         | POI/246 PHPC PC/residential_area | NYC: 62450 / CHI: 31573   |
+| RHRC     | Indicates that a Road has a specific road type         | Road/191750 RHRC RC/tertiary     | NYC: 110919 / CHI: 71578  |
+| JHJC     | Indicates that a Junction has a specific junction type | Junction/1293 JHJC JC/crossing   | NYC: 62437 / CHI: 37086   |
+| PLR      | Indicates that a POI is located along a Road           | POI/1006 PLR Road/155467         | NYC: 62450 / CHI: 31573   |
+| FLA      | Indicates that a Functional Zone belongs to an Area    | FZ/189 FLA Area/43               | NYC: 1271 / CHI: 190      |
+| PLF      | Indicates that a POI belongs to a Functional Zone      | POI/456782 PLF FZ/188            | NYC: 61139 / CHI: 4354    |
+| FHPC     | Indicates that a Functional Zone has a category        | FZ/62 FHPC PC/corporations       | NYC: 1271 / CHI: 190      |
+
+##### 3.1.2 Guidance on data usage and processing
 
 All raw data is stored in the **'./Meta_data'** folder. You can process these files using the `preprocess_meta_data_nyc.py` or `preprocess_meta_data_chi.py` scripts to perform necessary cleaning and alignment. Once processed, the cleaned data will be saved into the **'./Processed_data'** folder.
 
