@@ -1,6 +1,6 @@
 ![HUSK](HUSK.png)
 
-A Hierarchically Structured Urban Knowledge Graph Dataset for Multi-Level Spatial Tasks.
+# A Hierarchically Structured Urban Knowledge Graph Dataset for Multi-Level Spatial Tasks
 
 ## 1. Overview
 
