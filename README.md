@@ -38,8 +38,8 @@ The following table provides a brief description of the dataset:
 
 For each city, we construct its corresponding HUSK, which consists of triples formed by entities and relations. As shown in the table above, entities represent various urban features at different hierarchical levels, while relations serve as edges that connect pairs of entities. The main types of relations include the following:
 
-| relation | description                                            | example                          | number                    |
-| -------- | ------------------------------------------------------ | -------------------------------- | ------------------------- |
+| relation | description                                            | example                          | count                     |
+| -------- | ------------------------------------------------------ | -------------------------------- |---------------------------|
 | PLA      | Indicates that a POI belongs to an Area                | POI/245 PLA Area/224             | NYC: 62450 / CHI: 31573   |
 | RLA      | Indicates that a Road is located in an Area            | Road/191752 RLA Area/61          | NYC: 110919 / CHI: 71578  |
 | JLA      | Indicates that a Junction is in an Area                | Junction/1293 JLA Area/232       | NYC: 62437 / CHI: 37086   |
