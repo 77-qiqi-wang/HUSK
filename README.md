@@ -21,7 +21,7 @@ Please ensure that you have cloned the project and entered the directory before 
 
 ## 3. Dataset
 
-The datasets used in this work are derived from two open-source datasets in the UUKG project, collected from New York and Chicago. The complete data sources can be found on [Google Drive](https://drive.google.com/drive/folders/1egTmnKRzTQuyW_hsbFURUonGC-bJmBHW?usp=sharing), respectively.
+The datasets used in this work are derived from two open-source datasets in the UUKG project, collected from New York and Chicago. The complete data sources can be found on [Google Drive](https://drive.google.com/drive/folders/10f3euFFKJttW-_TwR61hakEPpAJypio7?usp=sharing), respectively.
 
 Below are detailed explanations of how to preprocess and use these data.
 
